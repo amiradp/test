@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" >
+<head>
+  
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta 
+        name="description" 
+        content="روش پیدا کردن تایم پلی دوتا۲"
+    />
+    <meta name="keywords"
+        content="دوتا ۲,dota 2, محاسبه تایم پلی دوتا۲, تایم پلی دوتا ۲, تایم پلی, Time Play Dota2"
+    />
+    <meta name="author" content="Better Call US, بهتره با ما تماس بگیری" />
+    <meta name="copyright" content="bettercallus.org" />
+    <meta name="robots" content="no-follow"/>
+    
+    <!-- SEO Title -->
+    <title> چطوری بفهمیم چقدر دوتا ۲ بازی کردیم؟- Better Call US</title>
+    <!-- Page Styles -->
+    <link rel="stylesheet" href={% static "styles/style.css" %} type="text/css">
+    <link rel="shortcut icon" href={% static "public/images/fav-icon.png" %} type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- 
+            GabeN Image
+            Short biography about gaben
+            @wayofmani
+         -->
+        <blockquote class="guide">
+            
+            <ol calss="txt-title-and-description">
+                <!-- Step 1 -->
+                <li>
+                    <p class="title">استیم رو باز بکنید.</p>
+                    <p class="description">و برید به لایبرری بازی هاتون و دوتا ۲ رو بیارید<div class=""></div></p>
+                </li><hr>
+
+                <!-- Step 2 -->
+                <li>
+                    <p class="title">کنار دکمه پلی </p>
+                    <p class="description">تعداد ساعتی که بازی کردید نمایش داده میشه.</p>
+                    <img src={% static "public/images/guide-playtime.png" %} alt="تعداد ساعت های بازی شده دوتا ۲ در استیم">
+                </li>
+            </ol>
+            <!-- 
+                Back Link
+                uses to refer users to other pages and shows helpful links
+                @wayofmani
+             -->
+             <div class="back-links">
+                <button class="btn-alternative">
+                    <a href="{% url 'index' %}">
+                        برگشت به برنامه
+                    </a>
+                </button>
+            </div>
+        </blockquote>
+
+
+        <!-- 
+            Footer
+            Most of the time we show credits and utaliti options like changing language here.
+            @wayofmani
+         -->
+        <footer>
+            <a href="https://github.com/bettercallus">
+                <img src={% static "public/images/footer.png" %} alt="Better Call US Footer Logo">
+            </a>
+        </footer>
+        
+    </div>
+</body>
+</html>

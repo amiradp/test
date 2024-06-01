@@ -1,0 +1,468 @@
+*{
+    box-sizing: border-box;
+}
+::selection{
+    background-color: #ffffff18;
+    color: white;
+}
+body,
+html
+{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    /* min-height: 100%;
+    max-height: 100%; */
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row; 
+    background-color: transparent;
+}
+
+html
+{
+    background: url(../public/images/app-bg.jpg) rgb(0, 0, 0) 50% 0%  / cover no-repeat;
+}
+
+body
+{
+    background: linear-gradient(180deg, rgba(23, 23, 25, 0.70) 29.49%, rgba(22, 20, 20, 0.90) 100%);
+}
+body.result
+{
+    background: radial-gradient(70.32% 34.89% at 90.69% 41.25%, rgba(75, 2, 2, 0.85) 0%, rgba(33, 5, 6, 0.85) 100%);
+}
+/* Disabling that annoying border when clicking on a feild or button */
+button,
+input,
+button:focus,
+input:focus
+{
+    outline: none;
+}
+
+/* Clickable elemnts */
+button,
+input
+{
+    cursor: pointer;
+}
+
+/* 
+    Container
+    All contents are inside of this div and align themselves with It's Width and Padding
+*/
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5rem;
+    width: var(--fill-to-container-width);
+    height: 100vh;
+    align-content: flex-start;
+    justify-content: space-around;
+
+}
+
+    /* 
+        Calculating Play Time
+        It's a form to recive data from users and push submit button
+    */
+    .calcPlayTime
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4.375rem;
+        width:100%;
+        margin-top: 5rem;
+    }
+    .calcPlayTime .formTitle
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5625rem;
+        width: 100%;
+    }
+        .calcPlayTime .fields
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+            width: 100%;
+        }
+            h1
+            {
+                /* 
+                    There is a trick that helps us to use different font sizes on any display i should learn and Search for it.
+                */
+                color: #FFF;
+                text-align: right;
+                text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.55);
+                font-size: 2rem;
+                margin: 0;
+                width: 100%;
+            }
+            .result h1 {
+                color: #DF5E36;
+                text-align: center;
+                text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.55);
+                font-family: Vazirmatn_ExtraBold;
+                font-size: 2.125rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+    /* Default Inputs */
+    input[type="text"],
+    input[type="number"],
+    input.state-available
+    {
+        display: flex;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5rem;
+        border: 0.094rem solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.45);
+        color: #FFF;
+        text-align: right;
+        font-family: Vazirmatn_Bold;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        backdrop-filter: var(--bg-blur-amount);
+    }
+        input.state-available:focus{
+            cursor:text;
+        }
+    
+    /* Disabled Inputs */
+    input.state-disable
+    {
+        /* background: rgba(0, 0, 0, 0.15); */
+        font-weight: 300;
+        opacity: 0.3;
+        cursor: default !important;
+    }
+
+    /* Submit button */
+    button.btn-primary{
+        display: flex;
+        width: 100%;
+        height: 2.9375rem;
+        padding: 0.5rem 1.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        /* Border */
+        border-top: 1px solid #95A598;
+        border-left: 1px solid #95A598;
+        border-bottom: 1px solid #00000069;
+        border-right: 1px solid #00000069;
+        /* Background */
+        background: linear-gradient(180deg, #49824D 0%, #4B8550 19%, #3B604C 100%);
+        /* Inner Shadow */
+        (0, 0, 0, 0.35) inset;
+        color: #FFF;
+
+        /* Label */
+        text-align: center;
+        text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+        font-family: Vazirmatn_ExtraBold;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        /* Animation Settins */
+        transition: all 0.3s ease-in ;
+
+        /* - - - Statements - - - */
+        /* When User Hovers over the button */
+        &:hover
+        {
+            background: linear-gradient(180deg, #57975c 0%, #55965b 19%, #446d57 100%);
+        }
+        /* When User Clicks on Button */
+        &:active
+        {
+            border-top: 1px solid #A5A7A6;
+            border-left: 1px solid #A5A7A6;
+            background: linear-gradient(180deg, #626764 0%, #A7A9A7 36.08%, #F4F4F4 100%);
+            box-shadow: -1px 0px 0px 0px #696969 inset, 0px -1px 0px 0px #AEAEAE inset;
+            
+        }
+        /* Pattern */
+        &::after
+        {
+            content: "";
+            position: absolute;
+            width: var(--fill-to-container-width);
+            height:2.9375rem;
+            padding: 0;
+            margin: auto;
+            display: block;
+            background-image: url(../../public/images/btn-pattern.png);
+            background-position-x: 0;
+            background-position-y: 0;
+            background-size: var(--fill-to-container-width);
+            background-repeat: no-repeat;
+            background-attachment: unset;
+            background-origin: unset;
+            background-clip:content-box;
+            background-color: transparent;
+            mix-blend-mode: normal;
+        }
+        /* Noises */
+        &::before
+        {
+            content: "";
+            position: absolute;
+            width: var(--fill-to-container-width);
+            height:2.9375rem;
+            padding: 0;
+            margin: auto;
+            left:0;
+            right: 0;
+            display: block;
+            background: url('../../public/images/btn-primary-texture.png') lightgray 50% / cover no-repeat;
+            mix-blend-mode: multiply;
+
+
+        }
+    }
+        .result button.btn-primary{
+            width: max-content;
+        }
+
+    /* 
+
+        Block Quote 
+        Uses to Present our quote to user. in this case we introduced GabeN
+    */
+    blockquote
+    {   
+        display: flex;
+        padding: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        align-self: stretch;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: var(--bg-blur-amount);
+        margin: 0;
+        height: max-content;
+        width:100%;
+    }
+    
+        blockquote img
+        {   
+            width: 4.5625rem;
+            height: 5.6875rem;
+            border-radius: 0.125rem;
+        }
+        blockquote div
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.125rem;
+            flex: 1 0 0;
+            justify-content: flex-start;
+            align-content: flex-start;
+        }
+            blockquote div h6
+            {
+                align-self: stretch;
+                color: #FFF;
+                text-align: right;
+                font-family: Vazirmatn_Bold;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 0;
+            }
+
+            blockquote div p
+            {
+                margin: 0;
+                align-self: stretch;
+                color: #FFF;
+                text-align: right;
+                font-family: Vazirmatn_Normal;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 500;
+                opacity: 0.65;
+            }
+
+    /* 
+        Alternative Button
+        Uses to redirect users to alternative and helpful links like tutorials.
+    */
+    div.back-links
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: stretch;
+        width:100%;
+    }
+
+        /* Button Container */
+        button.btn-alternative
+        {    
+            display: flex;
+            height: 2.9375rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            background:transparent;
+            border: 1px solid transparent;
+            align-self: stretch;
+            backdrop-filter: var(--bg-blur-amount);
+            /* width: 100%; */
+            transition: all 0.125s ease-in;
+            &:hover,
+            &:active
+            {
+                border: 1px solid #232727;
+                background: rgba(21, 16, 17, 0.90);
+            }
+        }
+        
+            /* Label */
+            button.btn-alternative a
+            {
+                color: #a8b9b9;
+                text-align: center;
+                text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+                font-family: Vazirmatn_Bold;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 500;
+                text-decoration: none;
+                display: flex;
+                padding: 0.375rem 1.5rem;
+                width: 100%;
+                height: 100%;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+            }
+
+    /* 
+        Footer
+        our links and our logo
+    */
+    footer
+    {
+        width: 100%;
+        display: flex;
+        height: 122px;
+        align-items: center;
+        justify-content: center;
+
+    }
+        footer img
+        {
+            
+        }
+    
+    .copy{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap:1rem;
+    }
+        .copy input{
+            display: flex;
+            width: 100%;
+            direction: ltr;
+            text-align: left;
+            
+        }
+    .result img.upcoming{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        user-select: none;
+    }
+    .result .container{
+        justify-content: space-between;
+    }
+    .result .formTitle{
+        margin-top: 7rem;
+        gap: 1rem;
+    }
+    .result .formTitle span{
+        color: #828386;
+        text-align: center;
+        font-family: Vazirmatn_Normal;
+        font-size: 0.9  rem;
+        font-style: normal;
+        font-weight: 100;
+        line-height: normal;
+    }
+    blockquote.guide
+    {
+        flex-direction: column;
+    }
+
+    blockquote ol li
+    {
+        color: white;
+        font-family: Vazirmatn_Bold;
+    }
+        blockquote ol li p.title 
+        {
+            color: #ffffff;
+            text-align: right;
+            font-family: Vazirmatn_Bold;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 0;
+        }
+
+        blockquote ol li p.description 
+        {
+            color: #ffffffb9;
+            text-align: right;
+            font-family: Vazirmatn_Normal;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin: 0 0 24px 0;
+        }
+
+        blockquote ol li img 
+        {
+            width: 100%;
+            height: max-content;
+        }
+
+        blockquote ol hr
+        {
+            border-color: #ffffff11;
+        }

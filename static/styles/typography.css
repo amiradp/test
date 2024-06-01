@@ -1,0 +1,59 @@
+/* 
+    @wayofmani
+    2024 May 27
+    Fonts we used in this project.
+    Font Define
+*/
+
+@font-face {
+    /* Display Texts (Extra Larg Titles) */
+    font-family: Vazirmatn_ExtraBold;
+    src: url(fonts/Vazirmatn-ExtraBold.ttf);
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+@font-face {
+    /*  Titles, Headers and H1-H6 Tags  */
+    font-family: Vazirmatn_Bold;
+    src: url(fonts/Vazirmatn-Bold.ttf);
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+@font-face {
+    /*  Body and Buttons  */
+    font-family: Vazirmatn_Normal;
+    src: url(fonts/Vazirmatn-Regular.ttf);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+/* 
+    Typography
+*/
+input.dota2-input{
+    font-family: Vazirmatn_Normal;
+}
+button.btn-alternative {
+    font-family: Vazirmatn_Normal;
+}
+
+button.btn-primary {
+    font-family: Vazirmatn_ExtraBold;
+}
+
+h1{
+    font-family: Vazirmatn_Bold;
+}
+
+.txt-title-and-description h6 {
+    font-family: Vazirmatn_Bold;
+}
+.txt-title-and-description p {
+    font-family: Vazirmatn_Normal;
+}

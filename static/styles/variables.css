@@ -1,0 +1,9 @@
+:root{
+    --bg-blur-amount:blur(8px);
+
+    /* 
+        Uses instead of 100% width to align all elements to the container width while css not supporting 100% for some properties like ::before and absolute position. 
+        this value changes in Responsive.css file and mobile devices with using JavaScript
+    */
+    --fill-to-container-width:22.5rem;
+}
